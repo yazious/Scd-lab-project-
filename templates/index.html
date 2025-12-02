@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce Simulation</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>E-Commerce Simulation</h1>
+
+<nav>
+    <a onclick="showPage('products')">Products</a>
+    <a onclick="showPage('cart')">Cart</a>
+</nav>
+
+<hr>
+
+<!-- SEARCH BAR -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search products...">
+    <button onclick="searchProducts()">Search</button>
+</div>
+
+<!-- CATEGORY FILTER -->
+<div class="filter-container">
+    <select id="filterSelect" onchange="filterCategory()">
+        <option value="">Filter by Category</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Clothing">Clothing</option>
+    </select>
+</div>
+
+<!-- WISHLIST NAV -->
+<div class="wishlist-nav">
+    <button onclick="loadWishlist()">Wishlist</button>
+</div>
+
+
+<!-- PRODUCTS PAGE -->
+<div id="products" class="page">
+    <h2>Products</h2>
+    <div id="products-list"></div>
+</div>
+
+<!-- CART PAGE -->
+<div id="cart" class="page">
+    <h2>Your Cart</h2>
+    <div id="cart-list"></div>
+
+    <h3>Total: $<span id="cart-total">0</span></h3>
+
+    <button onclick="checkout()">Checkout</button>
+    <button onclick="clearCart()" style="background:red;">Clear Cart</button>
+</div>
+
+<script src="/static/script.js"></script>
+<script>
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+        document.getElementById(pageId).style.display = 'block';
+
+        if (pageId === 'products') loadProducts();
+        if (pageId === 'cart') loadCart();
+    }
+
+    // Show products page on load
+    showPage('products');
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+    {
+        "category": "Electronics",
+        "name": "Laptop",
+        "price": 1000,
+        "stock": 10
+    },
+    {
+        "category": "Electronics",
+        "name": "Smartphone",
+        "price": 500,
+        "stock": 20
+    },
+    {
+        "category": "Clothing",
+        "name": "T-Shirt",
+        "price": 20,
+        "stock": 50
+    }
+]
